@@ -1,10 +1,13 @@
 import { useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
+import useMediaQuery from '../../hooks/useMediaQuery';
 
 const ScrollReveal = ({ children, direction = 'up', delay = 0, duration = 0.7, blur = false }) => {
   const ref = useRef(null);
+  const isMobile = useMediaQuery('(max-width: 768px)');
 
   useEffect(() => {
+    if (isMobile) return;
     const ctx = gsap.context(() => {
       const xValue = direction === 'left' ? -20 : direction === 'right' ? 20 : 0;
       const yValue = direction === 'up' || direction === 'down' ? 20 : 0;
@@ -33,7 +36,7 @@ const ScrollReveal = ({ children, direction = 'up', delay = 0, duration = 0.7, b
     }, ref);
 
     return () => ctx.revert();
-  }, [direction, delay, duration, blur]);
+  }, [direction, delay, duration, blur, isMobile]);
 
   return <div ref={ref}>{children}</div>;
 };

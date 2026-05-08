@@ -67,7 +67,7 @@ const ProjectDetailPage = () => {
           <div className="grid md:grid-cols-2 gap-6">
             {project.features.map((feature, i) => (
               <ScrollReveal key={i} direction={i % 2 === 0 ? 'left' : 'right'}>
-                <div className="p-6 bg-stark-black/60 border border-stark-red/20 rounded-xl backdrop-blur-md hover:border-stark-red/50 transition-all">
+                <div className="p-6 bg-stark-black/60 border border-stark-red/20 rounded-xl backdrop-blur-md blur-none-mobile hover:border-stark-red/50 transition-all">
                   <span className="text-3xl mb-3 block">{feature.icon}</span>
                   <h3 className="font-warrior text-stark-red text-xl mb-2">{feature.title}</h3>
                   <p className="font-body text-stark-gray text-sm">{feature.desc}</p>

@@ -252,7 +252,7 @@ const AboutSection = () => {
                 </p>
               </div>
 
-              <div ref={characterRef} className="mt-6 w-full rounded-xl overflow-hidden border border-stark-red/20 bg-stark-black/40 backdrop-blur-sm flex items-center max-h-32 group hover:border-stark-red/50 transition-all">
+              <div ref={characterRef} className="mt-6 w-full rounded-xl overflow-hidden border border-stark-red/20 bg-stark-black/40 backdrop-blur-sm blur-none-mobile flex items-center max-h-32 group hover:border-stark-red/50 transition-all">
                 <div className="w-24 h-full flex-shrink-0 overflow-hidden">
                   <img
                     src="/images/anime/stark_frieren_character.jpg"
@@ -323,13 +323,13 @@ const AboutSection = () => {
 
               {/* Text column — overlapped by photo */}
               <div className="md:col-span-7 md:pl-20 relative z-10">
-                <div className="bg-stark-black/70 backdrop-blur-md rounded-xl p-6 border border-stark-red/10">
+                <div className="bg-stark-black/70 backdrop-blur-md blur-none-mobile rounded-xl p-6 border border-stark-red/10">
                   <p className="font-body text-stark-gray text-base leading-relaxed">
                     {siteConfig.personal.bio}
                   </p>
                 </div>
 
-                <div ref={characterRef} className="mt-6 rounded-xl overflow-hidden border border-stark-red/20 bg-stark-black/40 backdrop-blur-sm flex items-center max-h-32 group hover:border-stark-red/50 transition-all">
+                <div ref={characterRef} className="mt-6 rounded-xl overflow-hidden border border-stark-red/20 bg-stark-black/40 backdrop-blur-sm blur-none-mobile flex items-center max-h-32 group hover:border-stark-red/50 transition-all">
                   <div className="w-24 h-full flex-shrink-0 overflow-hidden">
                     <img
                       src="/images/anime/stark_frieren_character.jpg"

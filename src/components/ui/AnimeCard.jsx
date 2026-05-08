@@ -53,7 +53,7 @@ const AnimeCard = ({ anime, index }) => {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       {...tapHandlers}
-      className="group relative h-72 rounded-lg overflow-hidden cursor-pointer glass backdrop-blur-md shadow-xl"
+      className="group relative h-72 rounded-lg overflow-hidden cursor-pointer glass backdrop-blur-md blur-none-mobile shadow-xl"
     >
       {/* Background Image */}
       <img

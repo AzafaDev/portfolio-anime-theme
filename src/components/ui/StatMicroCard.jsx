@@ -50,7 +50,7 @@ const StatMicroCard = ({ stat, index }) => {
   return (
     <div
       ref={cardRef}
-      className="relative h-full min-h-[120px] bg-stark-black/60 border border-stark-red/20 rounded-lg p-5 flex flex-col items-center justify-center text-center backdrop-blur-md overflow-hidden group hover:border-stark-red/50 transition-colors duration-300"
+      className="relative h-full min-h-[120px] bg-stark-black/60 border border-stark-red/20 rounded-lg p-5 flex flex-col items-center justify-center text-center backdrop-blur-md blur-none-mobile overflow-hidden group hover:border-stark-red/50 transition-colors duration-300"
     >
       <div className="absolute inset-0 bg-gradient-to-br from-stark-red/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
       <div

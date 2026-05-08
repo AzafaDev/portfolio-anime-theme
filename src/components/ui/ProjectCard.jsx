@@ -152,7 +152,7 @@ const ProjectCard = ({ project, index, featured = false }) => {
       onMouseLeave={handleMouseLeave}
       {...tapHandlers}
       onClick={handleClick}
-      className="group relative bg-stark-black/60 border border-stark-red/20 rounded-lg overflow-hidden cursor-pointer backdrop-blur-md h-full"
+      className="group relative bg-stark-black/60 border border-stark-red/20 rounded-lg overflow-hidden cursor-pointer backdrop-blur-md blur-none-mobile h-full"
       style={{ transformStyle: 'preserve-3d', perspective: '1000px' }}
     >
       {featured && (

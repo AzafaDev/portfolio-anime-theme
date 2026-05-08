@@ -114,6 +114,16 @@ body {
   transition: transform 0.3s ease;
 }
 
+/* Mobile performance: disable backdrop-blur on small screens */
+@layer utilities {
+  .blur-none-mobile {
+    @media (max-width: 767px) {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+    }
+  }
+}
+
 .slash-underline:hover::after {
   transform: scaleX(1);
 }

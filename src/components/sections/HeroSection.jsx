@@ -4,6 +4,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { siteConfig } from '../../config/portfolio.config';
 import AnimatedButton from '../ui/AnimatedButton';
 import ParallaxLayer from '../animations/ParallaxLayer';
+import useMediaQuery from '../../hooks/useMediaQuery';
 import starkVideo from '../../assets/videos/output.mp4';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -15,6 +16,7 @@ const HeroSection = () => {
   const tagRef = useRef(null);
   const btnRef = useRef(null);
   const videoRef = useRef(null);
+  const isMobile = useMediaQuery('(max-width: 768px)');
 
   useEffect(() => {
     const video = videoRef.current;
@@ -124,7 +126,7 @@ const HeroSection = () => {
             objectFit: 'cover',
           }}
         >
-          <source src={starkVideo} type="video/mp4" />
+          <source src={isMobile ? '/videos/output-mobile.mp4' : starkVideo} type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-stark-black/60" />
       </div>

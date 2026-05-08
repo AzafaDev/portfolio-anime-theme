@@ -92,7 +92,7 @@ const CursorChibi = () => {
         className="fixed top-0 left-0 z-[100] pointer-events-none"
         style={{ transform: 'translate(-50%, -50%)' }}
       >
-        <div className="w-12 h-12 bg-stark-red/15 backdrop-blur-md rounded-full border-2 border-stark-red/30 flex items-center justify-center shadow-lg shadow-stark-red/10">
+        <div className="w-12 h-12 bg-stark-red/15 backdrop-blur-md blur-none-mobile rounded-full border-2 border-stark-red/30 flex items-center justify-center shadow-lg shadow-stark-red/10">
           <img src="/images/chibi-stark.png" alt="Stark chibi" className="w-5/6 h-5/6 object-contain" />
         </div>
       </div>

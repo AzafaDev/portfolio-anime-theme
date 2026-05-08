@@ -45,7 +45,7 @@ const ContactSection = () => {
   return (
     <section id="contact" className="diagonal-section relative py-28 md:py-32 px-4 overflow-hidden">
       <div className="max-w-4xl mx-auto relative z-10">
-        <div className="bg-stark-black/70 backdrop-blur-lg rounded-3xl p-8 md:p-12 shadow-[0_0_30px_rgba(211,47,47,0.3)] border border-stark-red/10">
+        <div className="bg-stark-black/70 backdrop-blur-lg blur-none-mobile rounded-3xl p-8 md:p-12 shadow-[0_0_30px_rgba(211,47,47,0.3)] border border-stark-red/10">
           <SectionTitle
             title="Hubungi Prajurit"
             subtitle="Kirim misi atau sekadar sapa di medan digital"
@@ -110,25 +110,19 @@ const ContactSection = () => {
           <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
             <a
               href={`mailto:${siteConfig.contact.email}`}
-              className="group p-6 bg-stark-black/60 backdrop-blur-md border border-stark-red/10 rounded-xl hover:border-stark-red/40 transition-all duration-300 hover:-translate-y-1"
+              className="group p-6 bg-stark-black/60 backdrop-blur-md blur-none-mobile border border-stark-red/10 rounded-xl hover:border-stark-red/40 transition-all duration-300 hover:-translate-y-1"
             >
-              <FiMail className="w-7 h-7 text-stark-red mx-auto mb-3 group-hover:scale-110 transition-transform" />
-              <h3 className="font-warrior text-stark-cream text-sm tracking-wider mb-1">Email</h3>
-              <p className="font-body text-stark-gray text-sm break-all">{siteConfig.contact.email}</p>
-            </a>
-
+              <FiMail
+            
             <a
               href={`https://wa.me/${siteConfig.contact.whatsapp}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="group p-6 bg-stark-black/60 backdrop-blur-md border border-stark-red/10 rounded-xl hover:border-stark-red/40 transition-all duration-300 hover:-translate-y-1"
+              className="group p-6 bg-stark-black/60 backdrop-blur-md blur-none-mobile border border-stark-red/10 rounded-xl hover:border-stark-red/40 transition-all duration-300 hover:-translate-y-1"
             >
-              <FiPhone className="w-7 h-7 text-stark-red mx-auto mb-3 group-hover:scale-110 transition-transform" />
-              <h3 className="font-warrior text-stark-cream text-sm tracking-wider mb-1">WhatsApp</h3>
-              <p className="font-body text-stark-gray text-sm">+{siteConfig.contact.whatsapp}</p>
-            </a>
-
-            <div className="p-6 bg-stark-black/60 backdrop-blur-md border border-stark-red/10 rounded-xl hover:-translate-y-1 transition-all duration-300">
+              <FiPhone
+            
+            <div className="p-6 bg-stark-black/60 backdrop-blur-md blur-none-mobile border border-stark-red/10 rounded-xl hover:-translate-y-1 transition-all duration-300">
               <FiMapPin className="w-7 h-7 text-stark-red mx-auto mb-3" />
               <h3 className="font-warrior text-stark-cream text-sm tracking-wider mb-1">Lokasi</h3>
               <p className="font-body text-stark-gray text-sm">{siteConfig.contact.location}</p>

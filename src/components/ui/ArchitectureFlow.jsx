@@ -223,7 +223,7 @@ const ArchitectureFlow = ({ steps = [] }) => {
 
 /* ─── Komponen kartu kecil yang seragam ─── */
 const StepCard = ({ step }) => (
-  <div className="p-5 bg-stark-black/60 border border-stark-red/20 rounded-xl backdrop-blur-md hover:border-stark-red/50 transition-all group">
+  <div className="p-5 bg-stark-black/60 border border-stark-red/20 rounded-xl backdrop-blur-md blur-none-mobile hover:border-stark-red/50 transition-all group">
     <div className="flex items-start gap-3 mb-2">
       {step.icon && (
         <span className="text-2xl flex-shrink-0">{step.icon}</span>

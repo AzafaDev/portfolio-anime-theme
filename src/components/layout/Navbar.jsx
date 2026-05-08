@@ -162,7 +162,7 @@ const Navbar = () => {
 
   /* ───────── Mobile: Horizontal Navbar ───────── */
   return (
-    <nav className="mobile-nav fixed top-0 left-0 w-full z-50 bg-stark-black/95 backdrop-blur-md">
+    <nav className="mobile-nav fixed top-0 left-0 w-full z-50 bg-stark-black/95 backdrop-blur-md blur-none-mobile">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <Link
