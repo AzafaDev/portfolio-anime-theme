@@ -1,7 +1,6 @@
 import { useRef, useEffect, useCallback } from 'react';
 import { gsap } from 'gsap';
 import useMediaQuery from '../../hooks/useMediaQuery';
-import chibiImage from '../../assets/images/chibi-stark.png';
 
 const TRAIL_COUNT = 4;
 
@@ -63,7 +62,7 @@ const CursorChibi = () => {
     return (
       <div className="fixed bottom-4 left-4 z-50 w-14 h-14 animate-float pointer-events-none">
         <div className="w-full h-full bg-stark-red/20 rounded-full border-2 border-stark-red/40 flex items-center justify-center">
-          <img src={chibiImage} alt="Stark chibi" className="w-3/4 h-3/4 object-contain" />
+          <img src="/images/chibi-stark.png" alt="Stark chibi" className="w-3/4 h-3/4 object-contain" />
         </div>
       </div>
     );
@@ -94,7 +93,7 @@ const CursorChibi = () => {
         style={{ transform: 'translate(-50%, -50%)' }}
       >
         <div className="w-12 h-12 bg-stark-red/15 backdrop-blur-md rounded-full border-2 border-stark-red/30 flex items-center justify-center shadow-lg shadow-stark-red/10">
-          <img src={chibiImage} alt="Stark chibi" className="w-5/6 h-5/6 object-contain" />
+          <img src="/images/chibi-stark.png" alt="Stark chibi" className="w-5/6 h-5/6 object-contain" />
         </div>
       </div>
     </>

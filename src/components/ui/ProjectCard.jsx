@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { gsap } from 'gsap';
 import useMediaQuery from '../../hooks/useMediaQuery';
 import useSound from '../../hooks/useSound';
+import useMobileTap from '../../hooks/useMobileTap';
 
 const ProjectCard = ({ project, index, featured = false }) => {
   const cardRef = useRef(null);
@@ -10,6 +11,7 @@ const ProjectCard = ({ project, index, featured = false }) => {
   const isMobile = useMediaQuery('(max-width: 768px)');
   const navigate = useNavigate();
   const playHover = useSound('/sounds/hover.mp3');
+  const tapHandlers = useMobileTap(cardRef, 0.97);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -82,16 +84,6 @@ const ProjectCard = ({ project, index, featured = false }) => {
     });
   };
 
-  const handleTouchStart = () => {
-    if (!isMobile) return;
-    gsap.to(cardRef.current, { scale: 0.98, duration: 0.1, ease: 'power2.out' });
-  };
-
-  const handleTouchEnd = () => {
-    if (!isMobile) return;
-    gsap.to(cardRef.current, { scale: 1, duration: 0.2, ease: 'power2.out' });
-  };
-
   const handleClick = () => {
     if (!slashRef.current || !cardRef.current) return;
 
@@ -158,8 +150,7 @@ const ProjectCard = ({ project, index, featured = false }) => {
       onMouseEnter={handleMouseEnter}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      onTouchStart={handleTouchStart}
-      onTouchEnd={handleTouchEnd}
+      {...tapHandlers}
       onClick={handleClick}
       className="group relative bg-stark-black/60 border border-stark-red/20 rounded-lg overflow-hidden cursor-pointer backdrop-blur-md h-full"
       style={{ transformStyle: 'preserve-3d', perspective: '1000px' }}

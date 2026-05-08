@@ -4,7 +4,6 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { siteConfig } from '../../config/portfolio.config';
 import AnimatedButton from '../ui/AnimatedButton';
 import ParallaxLayer from '../animations/ParallaxLayer';
-import starkHeroImg from '../../assets/images/stark-hero.png';
 import starkVideo from '../../assets/videos/output.mp4';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -95,10 +94,12 @@ const HeroSection = () => {
   const scrollTo = (id) => {
     const target = document.getElementById(id);
     if (!target) return;
+    const rect = target.getBoundingClientRect();
+    const top = rect.top + window.pageYOffset - 80;
     if (window.__lenis) {
-      window.__lenis.scrollTo(target, { offset: 0, duration: 1.2 });
+      window.__lenis.scrollTo(target, { offset: -80, duration: 1.2 });
     } else {
-      target.scrollIntoView({ behavior: 'smooth' });
+      window.scrollTo({ top, behavior: 'smooth' });
     }
   };
 
@@ -115,7 +116,7 @@ const HeroSection = () => {
           loop
           playsInline
           preload="metadata"
-          poster={starkHeroImg}
+          poster="/images/stark-hero.png"
           className="absolute w-full"
           style={{
             top: 0,

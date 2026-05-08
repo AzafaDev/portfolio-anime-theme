@@ -1,5 +1,6 @@
 import { useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
+import useMobileTap from '../../hooks/useMobileTap';
 
 const AnimeCard = ({ anime, index }) => {
   const cardRef = useRef(null);
@@ -28,6 +29,8 @@ const AnimeCard = ({ anime, index }) => {
     return () => ctx.revert();
   }, [index]);
 
+  const tapHandlers = useMobileTap(cardRef, 0.95);
+
   const handleMouseEnter = () => {
     gsap.to(cardRef.current.querySelector('.anime-img'), {
       scale: 1.1,
@@ -49,6 +52,7 @@ const AnimeCard = ({ anime, index }) => {
       ref={cardRef}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
+      {...tapHandlers}
       className="group relative h-72 rounded-lg overflow-hidden cursor-pointer glass backdrop-blur-md shadow-xl"
     >
       {/* Background Image */}

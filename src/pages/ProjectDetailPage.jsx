@@ -2,6 +2,7 @@ import { useParams } from 'react-router-dom';
 import { siteConfig } from '../config/portfolio.config';
 import SectionTitle from '../components/ui/SectionTitle';
 import SkillPill from '../components/ui/SkillPill';
+import ArchitectureFlow from '../components/ui/ArchitectureFlow';
 import ScrollReveal from '../components/animations/ScrollReveal';
 import AnimatedButton from '../components/ui/AnimatedButton';
 import { FiArrowLeft, FiExternalLink, FiGithub } from 'react-icons/fi';
@@ -81,11 +82,12 @@ const ProjectDetailPage = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {project.images.map((img, i) => (
               <ScrollReveal key={i} blur>
-                <img
-                  src={img}
-                  alt={`Screenshot ${i + 1}`}
-                  className="w-full h-auto rounded-lg border border-stark-red/20 hover:scale-105 transition-transform duration-500"
-                />
+                  <img
+                    src={img}
+                    alt={`Screenshot ${i + 1}`}
+                    loading="lazy"
+                    className="w-full h-auto rounded-lg border border-stark-red/20 hover:scale-105 transition-transform duration-500"
+                  />
               </ScrollReveal>
             ))}
           </div>
@@ -93,9 +95,7 @@ const ProjectDetailPage = () => {
 
         <section className="mt-20 text-center">
           <SectionTitle title="Arsitektur Misi" subtitle="Bagaimana semua sistem terhubung." />
-          <div className="bg-stark-black/60 p-8 rounded-xl border border-stark-red/20">
-            <p className="text-stark-gray">[ Diagram arsitektur akan ditampilkan di sini ]</p>
-          </div>
+          <ArchitectureFlow steps={project.architecture || []} />
         </section>
       </div>
     </div>

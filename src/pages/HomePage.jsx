@@ -15,12 +15,13 @@ const HomePage = () => {
     const id = location.hash.replace('#', '');
     if (!id) return;
     const el = document.getElementById(id);
-    if (el) {
-      if (window.__lenis) {
-        window.__lenis.scrollTo(el, { offset: 0, duration: 1.2 });
-      } else {
-        el.scrollIntoView({ behavior: 'smooth' });
-      }
+    if (!el) return;
+    const rect = el.getBoundingClientRect();
+    const top = rect.top + window.pageYOffset - 80;
+    if (window.__lenis) {
+      window.__lenis.scrollTo(el, { offset: -80, duration: 1.2 });
+    } else {
+      window.scrollTo({ top, behavior: 'smooth' });
     }
   }, [location.hash]);
 

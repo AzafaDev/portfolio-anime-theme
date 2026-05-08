@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { gsap } from 'gsap';
 import { FiArrowUp } from 'react-icons/fi';
+import useMobileTap from '../../hooks/useMobileTap';
 
 const BackToTop = () => {
   const [visible, setVisible] = useState(false);
@@ -37,6 +38,8 @@ const BackToTop = () => {
     });
   }, []);
 
+  const tapHandlers = useMobileTap(btnRef, 0.9);
+
   const handleMouseLeave = useCallback(() => {
     boundsRef.current = null;
     gsap.to(btnRef.current, {
@@ -55,6 +58,7 @@ const BackToTop = () => {
       onClick={scrollToTop}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
+      {...tapHandlers}
       aria-label="Back to top"
       className="fixed bottom-8 right-8 z-40 w-10 h-10 rounded-full bg-stark-red text-stark-cream flex items-center justify-center shadow-lg shadow-stark-red/30 hover:scale-110 hover:shadow-stark-red/50 transition-all duration-300"
     >

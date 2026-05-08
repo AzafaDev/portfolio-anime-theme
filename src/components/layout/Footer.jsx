@@ -1,7 +1,6 @@
 import { FiGithub } from 'react-icons/fi';
 import { FaInstagram } from 'react-icons/fa';
 import { siteConfig } from '../../config/portfolio.config';
-import starkChibiImg from '../../assets/images/anime/stark_frieren_chibi.png';
 
 const iconMap = {
   FiGithub: FiGithub,
@@ -19,7 +18,7 @@ const Footer = () => {
           <div className="text-center md:text-left">
             <div className="flex items-center justify-center md:justify-start gap-2">
               <img
-                src={starkChibiImg}
+                src="/images/anime/stark_frieren_chibi.png"
                 alt="Stark chibi mascot"
                 className="w-8 h-8 object-contain animate-float inline-block align-middle"
                 style={{ animationDuration: '4s' }}

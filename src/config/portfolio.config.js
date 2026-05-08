@@ -4,7 +4,7 @@ export const siteConfig = {
     title: 'Software Engineer | Web Developer',
     tagline: 'Full-stack engineer forging scalable and high-performance web applications --- with the heart of a warrior.',
     bio: `Seorang prajurit kode yang berangkat dari rasa penasaran sederhana: bagaimana website benar‑benar bekerja. Tumbuh bersama ayah seorang SEO specialist, saya sudah akrab dengan website dan traffic sejak dini. Sebelum menyelami framework modern, saya membangun website bisnis nyata menggunakan WordPress---menangani tata letak, SEO, hingga integrasi WhatsApp commerce. Titik balik terjadi saat melihat website Next.js dengan performa sempurna di YouTube; sejak itu saya mendalami full‑stack secara otodidak dan melalui pelatihan intensif. Kini senjata utama saya adalah Next.js, React, Node.js, TypeScript, PostgreSQL, Prisma, dan Tailwind. Di luar jam bertempur, saya juga menjelajahi Golang secara otodidak untuk menempa diri di sisi backend yang lebih tangguh.`,
-    photo: '/src/assets/images/your-photo.jpeg',
+    photo: '/images/your-photo.jpeg',
   },
 
   socials: [
@@ -64,6 +64,13 @@ export const siteConfig = {
         '/images/projects/project1c.png',
         '/images/projects/project1d.png',
       ],
+      architecture: [
+        { label: 'Frontend', title: 'Next.js Client', desc: 'SSR + CSR hybrid, deployed on Vercel Edge Network.', icon: '🎨' },
+        { label: 'API', title: 'Express 5 Backend', desc: 'RESTful endpoints with middleware chaining and rate limiting.', icon: '⚙️' },
+        { label: 'Database', title: 'PostgreSQL + Prisma', desc: 'Atomic transactions for ticket purchase integrity.', icon: '🗄️' },
+        { label: 'Auth', title: 'JWT + OTP', desc: 'Resend-based email verification with role-based access control.', icon: '🔐' },
+        { label: 'Storage', title: 'Media + Email', desc: 'Cloudinary image hosting + Resend transactional email.', icon: '☁️' },
+      ],
       link: 'https://kinetix-events.vercel.app/',
       github: 'https://github.com/AzafaDev/kinetix-events',
     }
@@ -118,25 +125,25 @@ export const siteConfig = {
       title: 'Sousou no Frieren',
       quote: 'Aku... tidak akan membiarkan dia mati.',
       character: 'Stark',
-      image: '/src/assets/images/anime/frieren.jpg',
+      image: '/images/anime/frieren.jpg',
     },
     {
       title: 'Vinland Saga',
       quote: 'Kau tidak punya musuh. Tidak ada seorang pun yang pantas kau sakiti.',
       character: 'Thors',
-      image: '/src/assets/images/anime/vinland.jpg',
+      image: '/images/anime/vinland.jpg',
     },
     {
       title: 'Attack on Titan',
       quote: 'Jika kau menang, kau hidup. Jika kau kalah, kau mati.',
       character: 'Eren Yeager',
-      image: '/src/assets/images/anime/aot.jpg',
+      image: '/images/anime/aot.jpg',
     },
     {
       title: 'Demon Slayer',
       quote: 'Bekerja keras dan jangan pernah menyerah.',
       character: 'Tanjiro',
-      image: '/src/assets/images/anime/demonslayer.jpg',
+      image: '/images/anime/demonslayer.jpg',
     },
   ],
 

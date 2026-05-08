@@ -1,5 +1,6 @@
 import { useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
+import useMobileTap from '../../hooks/useMobileTap';
 import {
   SiReact,
   SiNextdotjs,
@@ -79,6 +80,8 @@ const SkillPill = ({ skill, index }) => {
     return () => ctx.revert();
   }, [index]);
 
+  const tapHandlers = useMobileTap(pillRef, 0.95);
+
   const handleMouseEnter = () => {
     gsap.to(pillRef.current, {
       scale: 1.1,
@@ -105,6 +108,7 @@ const SkillPill = ({ skill, index }) => {
       ref={pillRef}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
+      {...tapHandlers}
       className={`relative group flex items-center gap-2.5 px-4 py-2.5 rounded-full cursor-default transition-colors duration-200 ${tierClasses}`}
     >
       {skill.icon && iconMap[skill.icon] && (

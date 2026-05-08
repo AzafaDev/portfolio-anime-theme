@@ -4,7 +4,6 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import useMediaQuery from '../../hooks/useMediaQuery';
 import { siteConfig } from '../../config/portfolio.config';
 import SectionTitle from '../ui/SectionTitle';
-import starkCharacterImg from '../../assets/images/anime/stark_frieren_character.jpg';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -228,7 +227,7 @@ const AboutSection = () => {
               <div ref={characterRef} className="mt-6 w-full rounded-xl overflow-hidden border border-stark-red/20 bg-stark-black/40 backdrop-blur-sm flex items-center max-h-32 group hover:border-stark-red/50 transition-all">
                 <div className="w-24 h-full flex-shrink-0 overflow-hidden">
                   <img
-                    src={starkCharacterImg}
+                    src="/images/anime/stark_frieren_character.jpg"
                     alt="Stark from Frieren"
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
@@ -305,7 +304,7 @@ const AboutSection = () => {
                 <div ref={characterRef} className="mt-6 rounded-xl overflow-hidden border border-stark-red/20 bg-stark-black/40 backdrop-blur-sm flex items-center max-h-32 group hover:border-stark-red/50 transition-all">
                   <div className="w-24 h-full flex-shrink-0 overflow-hidden">
                     <img
-                      src={starkCharacterImg}
+                      src="/images/anime/stark_frieren_character.jpg"
                       alt="Stark from Frieren"
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />

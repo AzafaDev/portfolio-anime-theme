@@ -1,6 +1,7 @@
 import { useRef } from 'react';
 import { gsap } from 'gsap';
 import useSound from '../../hooks/useSound';
+import useMobileTap from '../../hooks/useMobileTap';
 
 const AnimatedButton = ({ text, variant = 'primary', onClick, icon: Icon, magnetic = false, className: extraClassName = '', ...rest }) => {
   const btnRef = useRef(null);
@@ -8,6 +9,7 @@ const AnimatedButton = ({ text, variant = 'primary', onClick, icon: Icon, magnet
   const boundsRef = useRef(null);
   const playHover = useSound('/sounds/hover.mp3');
   const playClick = useSound('/sounds/slash.mp3');
+  const tapHandlers = useMobileTap(btnRef, 0.95);
 
   const handleMouseMove = (e) => {
     if (!magnetic || !btnRef.current) return;
@@ -114,6 +116,7 @@ const AnimatedButton = ({ text, variant = 'primary', onClick, icon: Icon, magnet
       onMouseMove={handleMouseMove}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
+      {...tapHandlers}
       className={`${baseClasses} ${variantClasses} ${extraClassName}`.trim()}
       {...rest}
     >

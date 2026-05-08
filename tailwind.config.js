@@ -18,7 +18,7 @@ export default {
         quote: ['Lora', 'Georgia', 'serif'],
       },
       backgroundImage: {
-        'hero-pattern': "url('/src/assets/images/stark-hero.png')",
+        'hero-pattern': "url('/images/stark-hero.png')",
       },
       keyframes: {
         float: {

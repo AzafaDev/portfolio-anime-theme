@@ -3,7 +3,6 @@ import { gsap } from 'gsap';
 import { siteConfig } from '../../config/portfolio.config';
 import SectionTitle from '../ui/SectionTitle';
 import AnimeCard from '../ui/AnimeCard';
-import wallpaperImg from '../../assets/images/anime/stark_frieren_wallpaper.jpg';
 
 const AnimeFavoritesSection = () => {
   const sectionRef = useRef(null);
@@ -29,7 +28,7 @@ const AnimeFavoritesSection = () => {
     <section id="anime" ref={sectionRef} className="relative py-28 md:py-32 px-4 overflow-hidden">
       <div
         className="anime-bg absolute inset-0 bg-cover bg-center opacity-10 pointer-events-none"
-        style={{ backgroundImage: `url(${wallpaperImg})`, backgroundPositionY: '0%' }}
+        style={{ backgroundImage: "url('/images/anime/stark_frieren_wallpaper.jpg')", backgroundPositionY: '0%' }}
       />
 
       <div className="max-w-7xl mx-auto relative z-10">
