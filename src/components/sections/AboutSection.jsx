@@ -1,7 +1,8 @@
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useCallback } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import useMediaQuery from '../../hooks/useMediaQuery';
+import useMobileTap from '../../hooks/useMobileTap';
 import { siteConfig } from '../../config/portfolio.config';
 import SectionTitle from '../ui/SectionTitle';
 
@@ -92,6 +93,33 @@ const AboutSection = () => {
     });
   };
 
+  const onPhotoTouchStartExtra = useCallback(() => {
+    const el = photoRef.current;
+    if (!el) return;
+    gsap.to(el.querySelector('.warrior-frame'), {
+      rotationY: 8,
+      scale: 1.03,
+      duration: 0.4,
+      ease: 'expo.out',
+    });
+  }, []);
+
+  const onPhotoTouchEndExtra = useCallback(() => {
+    const el = photoRef.current;
+    if (!el) return;
+    gsap.to(el.querySelector('.warrior-frame'), {
+      rotationY: 0,
+      scale: 1,
+      duration: 0.4,
+      ease: 'expo.out',
+    });
+  }, []);
+
+  const tapHandlers = useMobileTap(photoRef, 0.97, {
+    onTouchStartExtra: onPhotoTouchStartExtra,
+    onTouchEndExtra: onPhotoTouchEndExtra,
+  });
+
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.fromTo(
@@ -178,7 +206,7 @@ const AboutSection = () => {
           <>
             {/* Mobile: Stacked layout */}
             <div className="flex flex-col items-center">
-              <div className="relative flex justify-center w-full" ref={photoWrapRef}>
+              <div className="relative flex justify-center w-full" ref={photoWrapRef} {...tapHandlers}>
                 <div
                   ref={photoRef}
                   className="relative w-64 h-64 sm:w-72 sm:h-72"

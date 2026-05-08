@@ -178,12 +178,12 @@ const ProjectCard = ({ project, index, featured = false }) => {
           }}
         />
 
-        <div className="absolute inset-0 bg-stark-black/70 opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4 pointer-events-none">
+        <div className="absolute inset-0 bg-stark-black/70 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4 pointer-events-none">
           <p className="font-body text-stark-cream/90 text-xs sm:text-sm text-center line-clamp-4">
             {project.shortDesc || project.description}
           </p>
         </div>
-        <div className="absolute inset-0 bg-gradient-to-t from-stark-black via-stark-black/40 to-transparent opacity-60 md:group-hover:opacity-40 transition-opacity duration-300" />
+        <div className="absolute inset-0 bg-gradient-to-t from-stark-black via-stark-black/40 to-transparent opacity-100 md:opacity-60 md:group-hover:opacity-40 transition-opacity duration-300" />
       </div>
 
       {/* Content */}
