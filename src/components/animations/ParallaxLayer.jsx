@@ -1,6 +1,7 @@
 import { useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import useMediaQuery from '../../hooks/useMediaQuery';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -13,9 +14,10 @@ const ParallaxLayer = ({
   end = 'bottom top',
 }) => {
   const ref = useRef(null);
+  const isMobile = useMediaQuery('(max-width: 768px)');
 
   useEffect(() => {
-    if (!ref.current) return;
+    if (isMobile || !ref.current) return;
 
     const prop = direction === 'y' ? 'y' : 'x';
     const move = direction === 'y'
@@ -44,7 +46,7 @@ const ParallaxLayer = ({
         if (st.vars.trigger === ref.current?.parentElement) st.kill();
       });
     };
-  }, [speed, direction, start, end]);
+  }, [speed, direction, start, end, isMobile]);
 
   return (
     <div ref={ref} className={`absolute pointer-events-none ${className}`}>

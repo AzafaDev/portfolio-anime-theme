@@ -91,7 +91,7 @@ const ArchitectureFlow = ({ steps = [] }) => {
             scale: 1.3,
             duration: 1.2,
             delay: i * 0.2,
-            repeat: -1,
+            repeat: 0,
             yoyo: true,
             ease: 'sine.inOut',
           });

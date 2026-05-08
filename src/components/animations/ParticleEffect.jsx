@@ -7,6 +7,7 @@ const ParticleEffect = () => {
   const isMobile = useMediaQuery('(max-width: 768px)');
 
   useEffect(() => {
+    if (isMobile) return;
     const container = containerRef.current;
     if (!container) return;
 
