@@ -117,12 +117,12 @@ const HeroSection = () => {
           muted
           loop
           playsInline
-          preload="metadata"
+          preload="none"
           poster="/images/stark-hero.png"
           className="absolute w-full"
           style={{
             top: 0,
-            height: 'calc(100% + 60px)',
+            height: 'calc(100% + 75px)',
             objectFit: 'cover',
           }}
         >
