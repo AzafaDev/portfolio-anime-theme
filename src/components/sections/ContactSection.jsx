@@ -112,16 +112,22 @@ const ContactSection = () => {
               href={`mailto:${siteConfig.contact.email}`}
               className="group p-6 bg-stark-black/60 backdrop-blur-md blur-none-mobile border border-stark-red/10 rounded-xl hover:border-stark-red/40 transition-all duration-300 hover:-translate-y-1"
             >
-              <FiMail
-            
+              <FiMail className="w-7 h-7 text-stark-red mx-auto mb-3 group-hover:scale-110 transition-transform" />
+              <h3 className="font-warrior text-stark-cream text-sm tracking-wider mb-1">Email</h3>
+              <p className="font-body text-stark-gray text-sm break-all">{siteConfig.contact.email}</p>
+            </a>
+
             <a
               href={`https://wa.me/${siteConfig.contact.whatsapp}`}
               target="_blank"
               rel="noopener noreferrer"
               className="group p-6 bg-stark-black/60 backdrop-blur-md blur-none-mobile border border-stark-red/10 rounded-xl hover:border-stark-red/40 transition-all duration-300 hover:-translate-y-1"
             >
-              <FiPhone
-            
+              <FiPhone className="w-7 h-7 text-stark-red mx-auto mb-3 group-hover:scale-110 transition-transform" />
+              <h3 className="font-warrior text-stark-cream text-sm tracking-wider mb-1">WhatsApp</h3>
+              <p className="font-body text-stark-gray text-sm">+{siteConfig.contact.whatsapp}</p>
+            </a>
+
             <div className="p-6 bg-stark-black/60 backdrop-blur-md blur-none-mobile border border-stark-red/10 rounded-xl hover:-translate-y-1 transition-all duration-300">
               <FiMapPin className="w-7 h-7 text-stark-red mx-auto mb-3" />
               <h3 className="font-warrior text-stark-cream text-sm tracking-wider mb-1">Lokasi</h3>
