@@ -14,15 +14,28 @@ const HomePage = () => {
   useEffect(() => {
     const id = location.hash.replace('#', '');
     if (!id) return;
-    const el = document.getElementById(id);
-    if (!el) return;
-    const rect = el.getBoundingClientRect();
-    const top = rect.top + window.pageYOffset - 80;
-    if (window.__lenis) {
-      window.__lenis.scrollTo(el, { offset: -80, duration: 1.2 });
-    } else {
-      window.scrollTo({ top, behavior: 'smooth' });
-    }
+
+    let attempts = 0;
+    const maxAttempts = 10;
+
+    const tryScroll = () => {
+      const el = document.getElementById(id);
+      if (el && el.offsetHeight > 0) {
+        const rect = el.getBoundingClientRect();
+        const top = rect.top + window.pageYOffset - 80;
+
+        if (window.__lenis) {
+          window.__lenis.scrollTo(el, { offset: -80, duration: 1.2 });
+        } else {
+          window.scrollTo({ top, behavior: 'smooth' });
+        }
+      } else if (attempts < maxAttempts) {
+        attempts++;
+        requestAnimationFrame(tryScroll);
+      }
+    };
+
+    setTimeout(tryScroll, 50);
   }, [location.hash]);
 
   return (

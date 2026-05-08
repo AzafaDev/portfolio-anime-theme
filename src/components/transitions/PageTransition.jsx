@@ -53,7 +53,9 @@ const PageTransition = ({ children }) => {
         audioRef.current.volume = 0.4;
         audioRef.current.play().catch(() => {});
         setDisplayLocation(location);
-        window.scrollTo(0, 0);
+        if (!location.hash) {
+          window.scrollTo(0, 0);
+        }
       })
       .to(slashLineRef.current, {
         scaleX: 1.5,
